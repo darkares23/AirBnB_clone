@@ -3,6 +3,7 @@
 
 """
 import json
+import copy
 from datetime import datetime
 from uuid import uuid4
 import models
@@ -11,7 +12,7 @@ class BaseModel:
     """Base Model"""
     def __init__(self, *args, **kwargs):
         """ """
-        if len(kwargs) >= 1:
+        if len(kwargs) is not 0:
             for k, v in kwargs.items():
                 if (k == 'created_at' or k == 'updated_at'):
                     setattr(self, k, datetime.strptime(v, "%Y-%m-%dT%H:%M:%S.%f"))
@@ -33,9 +34,8 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """ """
-        key = self.__dict__
-        key["__class__"] = self.__class__.__name__
-        key["created_at"] = key["created_at"].isoformat()
-        key["updated_at"] =  key["updated_at"].isoformat()
-        return key
+       dic = copy.deepcopy(self.__dict__)
+       dic['updated_at'] = dic['updated_at'].isoformat()
+       dic['created_at'] = dic['created_at'].isoformat()
+       dic['__class__'] = self.__class__.__name__
+       return (dic)
