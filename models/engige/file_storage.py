@@ -33,7 +33,8 @@ class FileStorage():
     def save(self):
         """Serealizes __object to json file"""
         with open(self.__file_path, 'w', encoding="utf-8") as f:
-            f.write(str({k: v.to_dict() for (k, v) in self.__objects.items()}))
+            dic = {k: v.to_dict() for (k, v) in self.__objects.items()}
+            f.write(json.dumps(dic))
 
     def reload(self):
         """Deserealizes the json file to __obnjests only if exist"""
