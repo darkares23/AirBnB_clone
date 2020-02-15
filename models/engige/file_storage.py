@@ -46,7 +46,7 @@ class FileStorage():
                     "Amenity": Amenity,
                     "Place": Place,
                     "Review": Review}
- 
+
         if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r', encoding='utf-8') as f:
                 dump = f.read()
