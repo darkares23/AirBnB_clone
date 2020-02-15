@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import cmd
-import shlex
 
 class HBNBCommand(cmd.Cmd):
 
