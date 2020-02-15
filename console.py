@@ -46,6 +46,21 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
+    def do_show(self, arg):
+        """ Prints the string representation of an instance based on the class name and id"""
+        commands = shlex.split(arg)
+        if len(commands) == 0:
+            print('** class name missing **')
+        elif len(commands) == 1:
+            print("** instance id missing **")
+        elif commands[0] not in self.cls_dict:
+            print("** class doesn't exist **")
+        else:
+            instance = commands[0] + '.' + commands[1]
+            if instance in models.storage.all():
+                print(models.storage.all()[instance])
+            else:
+                print('** no instance found **')
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
