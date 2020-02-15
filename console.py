@@ -14,6 +14,7 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) '
+    obj_dict = models.storage._FileStorage__objects
     cls_dict = {"BaseModel": BaseModel,
                 "User": User,
                 "State": State,
@@ -46,6 +47,21 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
+    def do_destroy(self, line):
+        """Deletes an instance with the class name and id"""
+        args = shlex.split(line)
+        if not args:
+            print ("** class name missing **")
+        elif args[0] in self.cls_dict:
+            if len(args) != 2:
+                print ("** instance id missing **")
+            elif "{}.{}".format(args[0], args[1]) in HBNBCommand.obj_dict:
+                del(HBNBCommand.obj_dict["{}.{}".format(args[0], args[1])])
+            else:
+                print ("** no instance found **")
+        else:
+            print("** class doesn't exist **")
+        models.storage.save()
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
