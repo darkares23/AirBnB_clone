@@ -4,7 +4,7 @@ Module to inherit from BaseModel
 """
 
 
-from model.base_model import BaseModel
+from models.base_model import BaseModel
 
 
 

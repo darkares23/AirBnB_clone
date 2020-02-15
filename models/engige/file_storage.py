@@ -7,6 +7,12 @@ File store class
 import json
 import os
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class FileStorage():
@@ -26,18 +32,27 @@ class FileStorage():
 
     def save(self):
         """Serealizes __object to json file"""
-        with open(self, __file_path, 'w', encoding="utf-8") as f:
+        with open(self.__file_path, 'w', encoding="utf-8") as f:
             f.write(str({k: v.to_dict() for (k, v) in self.__objects.items()}))
 
     def reload(self):
         """Deserealizes the json file to __obnjests only if exist"""
+
+        cls_dict = {"BaseModel": BaseModel,
+                    "User": User,
+                    "State": State,
+                    "City": City,
+                    "Amenity": Amenity,
+                    "Place": Place,
+                    "Review": Review}
+                    
         if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r', encoding='utf-8') as f:
                 dump = f.read()
                 str_dict = json.loads(dump)
                 for k, v in str_dict.items():
                     clss = v['__class__']
-                    create_class = validClasses[class_]
+                    create_class = cls_dict[clss]
                     self.__objects[k] = create_class(**v)
 
     def get_filepath(self):

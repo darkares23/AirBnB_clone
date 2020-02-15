@@ -7,7 +7,7 @@ Module to inherit from BaseModel
 from models.base_model import BaseModel
 
 
-clase Review(BaseModel)
+class Review(BaseModel):
     """
     Review class that inherit from BaseModel
     """
