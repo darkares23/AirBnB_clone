@@ -11,7 +11,4 @@ class State(BaseModel):
     """
     State class that inhiret BaseModel
     """
-    email = ''
-    password = ''
-    first_name = ''
-    last_name = ''
+    name = ''
