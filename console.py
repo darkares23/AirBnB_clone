@@ -15,7 +15,9 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-
+    """
+    Define commands for HBNB
+    """
     prompt = '(hbnb) '
     obj_dict = models.storage._FileStorage__objects
     cls_dict = {"BaseModel": BaseModel,
@@ -27,19 +29,27 @@ class HBNBCommand(cmd.Cmd):
                 "Review": Review}
 
     def do_EOF(self, line):
-        """Command to exit the Interpreter typing EOF"""
+        """
+        Command to exit the Interpreter typing EOF
+        """
         return True
 
     def do_quit(self, line):
-        """Quit command to exit the program\n"""
+        """
+        Quit command to exit the program\n
+        """
         return True
 
     def emptyline(self):
-        """empty line + ENTER execute anything"""
+        """
+        Empty line + ENTER execute anything
+        """
         pass
 
     def do_create(self, arg):
-        """A method that creates an instance of a class."""
+        """
+        A method that creates an instance of a class
+        """
         if not arg:
             print("** class name missing **")
         elif arg in self.cls_dict:
@@ -51,23 +61,27 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_destroy(self, line):
-        """Deletes an instance with the class name and id"""
+        """
+        Deletes an instance with the class name and id
+        """
         args = shlex.split(line)
         if not args:
-            print ("** class name missing **")
+            print("** class name missing **")
         elif args[0] in self.cls_dict:
             if len(args) != 2:
-                print ("** instance id missing **")
+                print("** instance id missing **")
             elif "{}.{}".format(args[0], args[1]) in HBNBCommand.obj_dict:
                 del(HBNBCommand.obj_dict["{}.{}".format(args[0], args[1])])
             else:
-                print ("** no instance found **")
+                print("** no instance found **")
         else:
             print("** class doesn't exist **")
         models.storage.save()
 
     def do_show(self, arg):
-        """ Prints representation of based on the class name and id"""
+        """
+        Prints representation of based on the class name and id
+        """
         commands = shlex.split(arg)
         if len(commands) == 0:
             print('** class name missing **')
@@ -83,7 +97,9 @@ class HBNBCommand(cmd.Cmd):
                 print('** no instance found **')
 
     def do_all(self, line):
-        """ string representation of all instances based on the class name"""
+        """
+        String representation of all instances based on the class name
+        """
         args = shlex.split(line)
         if len(args) == 0:
             obj_list = []
@@ -100,10 +116,12 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, line):
-        """Updated instances"""
+        """
+        Updated instances
+        """
         args = shlex.split(line)
         if not args:
-            print ("** class name missing **")
+            print("** class name missing **")
             return
         elif args[0] not in self.cls_dict:
             print("** class doesn't exist **")
@@ -132,6 +150,7 @@ class HBNBCommand(cmd.Cmd):
                             print("You can't cast to type: {}".format(type_))
                     except:
                         setattr(ins, args[2], str(args[3]))
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
