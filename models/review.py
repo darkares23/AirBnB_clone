@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module to inherit from BaseModel
+This module defines the Review class
 """
 
 
@@ -11,6 +11,6 @@ class Review(BaseModel):
     """
     Review class that inherit from BaseModel
     """
-    place_id=''
-    user_id=''
-    text=''
+    place_id = ''
+    user_id = ''
+    text = ''

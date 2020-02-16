@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module to inherit from BaseModel
+This module define the State class
 """
 
 
@@ -11,7 +11,7 @@ class State(BaseModel):
     """
     State class that inhiret BaseModel
     """
-    email=''
-    password=''
-    first_name=''
-    last_name=''
+    email = ''
+    password = ''
+    first_name = ''
+    last_name = ''

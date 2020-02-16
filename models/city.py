@@ -7,9 +7,9 @@ Module to inherit from BaseModel
 from models.base_model import BaseModel
 
 
-
 class City(BaseModel):
-    """City class that inherits from BaseModel
+    """
+    Represent the city an accommodation is located
     """
     state_id = ''
     name = ''

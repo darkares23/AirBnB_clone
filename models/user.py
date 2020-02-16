@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module to inherit from BaseModel
+"""
+Define User class
 """
 
 
@@ -7,7 +8,8 @@ from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """User class that inherits from BaseModel
+    """
+    Represent a site user and store their information
     """
     email = ''
     password = ''
