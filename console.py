@@ -32,6 +32,7 @@ class HBNBCommand(cmd.Cmd):
         """
         Command to exit the Interpreter typing EOF
         """
+        print()
         return True
 
     def do_quit(self, line):
@@ -150,6 +151,27 @@ class HBNBCommand(cmd.Cmd):
                             print("You can't cast to type: {}".format(type_))
                     except:
                         setattr(ins, args[2], str(args[3]))
+
+    def default(self, line):
+        args = line.split(".")
+
+        if len(args) > 1:
+            use_class = args[0]
+            use_method = args[1]
+        if args[1] == "all()":
+            self.do_all(use_class)
+        elif args[1] == "count()":
+            count = 0
+            obj_list = models.storage.all()
+            for k in obj_list:
+                tok = k.split(".")
+                if tok[0] == use_class:
+                    count += 1
+            print(count)
+        elif args[1] == "show()":
+            self.show(use_class)
+
+
 
 
 if __name__ == '__main__':
