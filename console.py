@@ -158,18 +158,34 @@ class HBNBCommand(cmd.Cmd):
         if len(args) > 1:
             use_class = args[0]
             use_method = args[1]
+            obj_list = models.storage.all()
         if args[1] == "all()":
             self.do_all(use_class)
         elif args[1] == "count()":
             count = 0
-            obj_list = models.storage.all()
             for k in obj_list:
                 tok = k.split(".")
                 if tok[0] == use_class:
                     count += 1
             print(count)
-        elif args[1] == "show()":
-            self.show(use_class)
+        elif use_method[:5] == "show(" and use_method[-1] == ")":
+                id_str = use_method[5:-1]
+                id_num = shlex.split(id_str)
+                key = use_class + "." + id_num[0]
+                if key not in obj_list:
+                    print("** no instance found **")
+                else:
+                    print(obj_list[key])
+        elif use_method[:8] == "destroy(" and use_method[-1] == ")":
+                id_str = use_method[8:-1]
+                id_num = shlex.split(id_str)
+                key = use_class + "." + id_num[0]
+                if key not in obj_list:
+                    print("** no instance found **")
+                else:
+                    del obj_list[key]
+                    models.storage.save()
+            
 
 
 
