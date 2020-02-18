@@ -185,10 +185,6 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     del obj_list[key]
                     models.storage.save()
-            
-
-
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
