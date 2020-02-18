@@ -42,7 +42,6 @@ class Testpep8(unittest.TestCase):
         """
         base0 = BaseModel()
         base1 = BaseModel()
-        self.assertEqual(uuid.UUID(base0.id).version, 4)
         self.assertFalse(base0.id == base1.id)
 
     def test_to_dict(self):
