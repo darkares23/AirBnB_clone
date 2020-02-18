@@ -43,7 +43,7 @@ class BaseModel:
         """
         Returns a string of class name, id, and dictionary
         """
-        return("[{}] ({}) {}").format(self.__class__.__name__, self.id,
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id,
                                       self.__dict__)
 
     def save(self):

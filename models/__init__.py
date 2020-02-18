@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""this is the doc string for models module
+"""
+this is the doc string for models module
 """
 
 
