@@ -17,10 +17,9 @@ class Testpep8(unittest.TestCase):
         result = pep8style.check_files(['models/review.py'])
         self.assertEqual(result.total_errors, 0, "Found style errors")
 
-
-def test_class(self):
-    rev1 = Review()
-    self.assertEqual(rev1.__class__.__name__, "Review")
+    def test_class(self):
+        rev1 = Review()
+        self.assertEqual(rev1.__class__.__name__, "Review")
 
     def test_father(self):
         rev1 = Review()
