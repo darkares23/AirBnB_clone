@@ -22,7 +22,8 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/amenity.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                        "Found code style errors (and warnings).")
 
     def test_pep8_conformance_base_model(self):
         """
@@ -30,7 +31,8 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base_model.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                      "Found code style errors (and warnings).")
 
     def test_pep8_conformance_city(self):
         """
@@ -38,7 +40,8 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/city.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                      "Found code style errors (and warnings).")
 
     def test_pep8_conformance_place(self):
         """
@@ -46,7 +49,8 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/place.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                      "Found code style errors (and warnings).")
 
     def test_pep8_conformance_review(self):
         """
@@ -54,7 +58,8 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/review.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                      "Found code style errors (and warnings).")
 
     def test_pep8_conformance_state(self):
         """
@@ -62,7 +67,8 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/state.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                      "Found code style errors (and warnings).")
 
     def test_pep8_conformance_user(self):
         """
@@ -70,7 +76,8 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/user.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                      "Found code style errors (and warnings).")
 
     def test_pep8_conformance_init(self):
         """
@@ -78,7 +85,8 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/__init__.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                      "Found code style errors (and warnings).")
 
     def test_pep8_conformance_file_storage(self):
         """
@@ -86,7 +94,8 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/engine/file_storage.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                      "Found code style errors (and warnings).")
 
     def test_pep8_conformance_console(self):
         """
@@ -94,4 +103,5 @@ class Testpep8(unittest.TestCase):
         """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['console.py'])
-        self.assertEqual(result.total_errors, 0, "Found style errors")
+        self.assertEqual(result.total_errors, 0,
+                      "Found code style errors (and warnings).")
