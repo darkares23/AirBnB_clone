@@ -1,14 +1,14 @@
 # AirBnB CLONE
 
-## Starting 🚀
+## Starting
 Ubuntu LTS - Operating system reqd.
 
-## Prerequisites 📋
+## Prerequisites
 
 - Must have git installed
 - Must have repository cloned
 
-## description of the project 🚀
+## Description of the project
 
 Write a command interpreter to manage your AirBnB objects. This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration.
 
@@ -21,33 +21,35 @@ Each task is linked and they are the next:
 - Create all unittests to validate all our classes and storage engine
 
 
-### Coommand interpreter���
+### Coommand interpreter
 
 Do you remember the Shell? Its exactly the same but limited to a specific use-case. In our case, we want to be able to manage the objects of our project:
 
-- Create a new object (ex: a new User or a new Place)
-- Retrieve an object from a file, a database etc
-- Do operations on objects (count, compute stats, etc)
-- Update attributes of an object
-- Destroy an object
+- Create a new object (ex: a new User or a new Place).
+- Retrieve an object from a file, a database etc.
+- Do operations on objects (count, compute stats, etc).
+- Update attributes of an object.
+- Destroy an object.
+
 
 ## Files and Directories
 
-### models directory : 
-This will contain all classes used for the entire project. A class, called “model” in a OOP project is the representation of an object/instance.
-### tests: 
+- ### models directory : 
+This will contain all classes used for the entire project. A class, called **"model"**in a OOP project is the representation of an object/instance.
+- ### tests: 
 This directory will contain all unit tests.
-### console.py:
+- ### console.py:
 This file is the entry point of our command interpreter.
-### models/base_model.py 
+- ### models/base_model.py 
 This path file is the base class of all our models. It contains common elements:
- - attributes: id, created_at and updated_at
- - methods: save() and to_json()
-### models/engine:
+ * **attributes:** id, created_at and updated_at
+ * **methods:** save() and to_json()
+- ### models/engine:
 This directory will contain all storage classes (using the same prototype). For the moment you will have only one: 
- - file_storage.py.
+ * **file_storage.py**
 
-### Commands 🔧
+
+### Commands
 
 | Commands| Description|
 | ------ | ------ |
@@ -60,14 +62,13 @@ This directory will contain all storage classes (using the same prototype). For 
 | show | Prints the string representation of an instance based on the class name and id |
 | EOF | EOF command to exit the program |
 
-### Installation ?~_~T?
+### Installation
 Clone this repository in your terminal
 ```
 $ sudo apt-get install git
 ```
 
-## Execution ⚙️
-
+## Execution
 ```
 $ ./console.py
 (hbnb) help
@@ -81,21 +82,22 @@ EOF  help  quit
 (hbnb) quit
 $
 ```
-## Builded in 🛠️
 
-* bash
-* VsCode
+## Builded in
 
-## Authors ✒️
+ * bash
+ * VsCode
 
 
-* **Juan Sebastián Ocampo** -(https://github.com/darkares23)
-* **Maribel Serna** -(https://github.com/MarySerna)
+## Authors
 
-## License 📄
+ * **Juan Sebastian Ocampo** @darkares23  -(https://github.com/darkares23)
+ * **Maribel Serna**  @maryserar89 -(https://github.com/MarySerna)
+
+## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-## Acknowledgments 🎁
+## Acknowledgments
 
-* Holberton School (providing guidance) 📢
+ * Holberton School (providing guidance) 📢
