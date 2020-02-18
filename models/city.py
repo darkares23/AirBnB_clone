@@ -11,6 +11,6 @@ class City(BaseModel):
     """
     Represent the city an accommodation is located
     """
-	
+
     state_id = ''
     name = ''
