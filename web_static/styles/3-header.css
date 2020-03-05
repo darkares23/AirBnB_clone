@@ -2,7 +2,8 @@ header {
 	background-image: url("../images/logo.png");
 	background-repeat: no-repeat;
 	background-color: white;
-	background-position: 15px;
+	background-position: 20px;
+	vertical-align: middle;
 	vertical-align: middle;
 	height: 70px;
 	border-bottom: 1px solid #CCCCCC;
